@@ -1,4 +1,5 @@
 import react, { useState } from "react";
+import React from "react";
 
 const Tabs = (props) => {
 
