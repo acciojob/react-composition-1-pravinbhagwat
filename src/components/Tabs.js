@@ -1,15 +1,18 @@
-import react from "react";
+import react, { useState } from "react";
 
 const Tabs = (props) => {
+
+    let [selectedTab, setSelectedTab] = useState('');
+
     return (
         <div>
             <ul>
-                {props.tabs.map((tab, index) => {
-                    return <li key={index} onClick={(e) => props.onClickHandler(e, index)}>{tab.label}</li>
+                {props.tablist.map((tab, index) => {
+                    return <li key={index} onClick={(e) => setSelectedTab(tab.content)}>{tab.title}</li>
                 })}
             </ul>
             <div>
-                {props.tabs[props.selectedTab].content}
+                {selectedTab}
             </div>
         </div>
     )
